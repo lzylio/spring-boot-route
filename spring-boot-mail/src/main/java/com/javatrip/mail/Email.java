@@ -18,11 +18,9 @@ public class Email {
     private JavaMailSender mailSender;
 
 
-
-
-    // http://127.0.0.1:7023/send
-    @GetMapping("send")
-    private void send(){
+    // http://127.0.0.1:7023/send/qqMail
+    @GetMapping("send/qqMail")
+    private void sendQqMail(){
 
         SimpleMailMessage message = new SimpleMailMessage();
         // 发件人
@@ -30,11 +28,29 @@ public class Email {
         // 收件人
         message.setTo("491118612@qq.com");
         // 邮件标题
-        message.setSubject("take your time");
+        message.setSubject("qqMail");
         // 邮件内容
-        message.setText("你好，这是一条用于测试Spring Boot邮件发送功能的邮件！哈哈哈~~~");
+        message.setText("qqMail");
         // 抄送人
-        message.setCc("lzy_format@163.com");
+        message.setCc("lzy_lio@163.com");
+        mailSender.send(message);
+    }
+
+    // http://127.0.0.1:7023/send/163Mail
+    @GetMapping("send/163Mail")
+    private void send163Mail(){
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        // 发件人
+        message.setFrom("lzy_lio@163.com");
+        // 收件人
+        message.setTo("lzy_lio@163.com");
+        // 邮件标题
+        message.setSubject("163Mail");
+        // 邮件内容
+        message.setText("163Mail");
+        // 抄送人
+        message.setCc("491118612@qq.com");
         mailSender.send(message);
     }
 }

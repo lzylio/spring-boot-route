@@ -1,2 +1,5 @@
-相关教程：
+获取授权码教程：
+https://blog.csdn.net/baolingye/article/details/96598222
+
+本系统参考教程：
 https://blog.csdn.net/m0_37968982/article/details/109223961
