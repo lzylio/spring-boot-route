@@ -16,20 +16,25 @@ public class Email {
 
     @Autowired
     private JavaMailSender mailSender;
+
+
+
+
+    // http://127.0.0.1:7023/send
     @GetMapping("send")
     private void send(){
 
         SimpleMailMessage message = new SimpleMailMessage();
         // 发件人
-        message.setFrom("xxx@126.com");
+        message.setFrom("491118612@qq.com");
         // 收件人
-        message.setTo("xxx@163.com");
+        message.setTo("491118612@qq.com");
         // 邮件标题
-        message.setSubject("Java发送邮件第二弹");
+        message.setSubject("take your time");
         // 邮件内容
         message.setText("你好，这是一条用于测试Spring Boot邮件发送功能的邮件！哈哈哈~~~");
         // 抄送人
-        message.setCc("xxx@qq.com");
+        message.setCc("lzy_format@163.com");
         mailSender.send(message);
     }
 }
